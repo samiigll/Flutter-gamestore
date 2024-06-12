@@ -1,30 +1,47 @@
 import 'package:flutter/material.dart';
 
 class SearchSection extends StatelessWidget {
-  const SearchSection({Key? key}) : super(key: key);
+  const SearchSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
-      color: Colors.yellow,
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      // height: 100,
+      // color: Colors.yellow,
+      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
       child: Stack(
         children: [
-          const TextField(),
+          TextField(
+            decoration: InputDecoration(
+                fillColor: Colors.white,
+                filled: true,
+                border: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  borderSide: BorderSide.none,
+                ),
+                prefixIcon: const Icon(
+                  Icons.search,
+                  size: 30,
+                ),
+                hintText: 'Search game...',
+                hintStyle: TextStyle(
+                  fontSize: 14,
+                  color: Colors.grey.withOpacity(0.7),
+                )),
+          ),
           Positioned(
             right: 12,
-            top: 0,
-            bottom: 0,
+            bottom: 10,
             child: Container(
-              padding: const EdgeInsets.all(0),
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(10)),
+              padding: const EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: const Color(0xFF5F67EA),
               ),
-              child: IconButton(
-                icon: const Icon(Icons.mic_outlined),
-                onPressed: () {},
+              child: const Icon(
+                Icons.mic_outlined,
+                color: Colors.white,
+                size: 25,
               ),
             ),
           ),
