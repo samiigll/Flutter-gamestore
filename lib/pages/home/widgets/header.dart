@@ -14,8 +14,10 @@ class HeaderSection extends StatelessWidget {
           right: 25,
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 Text(
                   "Welcome,",
@@ -36,7 +38,10 @@ class HeaderSection extends StatelessWidget {
               ],
             ),
             CircleAvatar(
-              child: Image.asset("assets/images/avatar.png"),
+              child: Image.asset(
+                "assets/images/avatar.png",
+                fit: BoxFit.cover,
+              ),
             ),
           ],
         ),
