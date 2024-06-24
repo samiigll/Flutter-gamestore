@@ -38,6 +38,7 @@ class CategorySection extends StatelessWidget {
         ),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
             height: 140,
@@ -73,6 +74,16 @@ class CategorySection extends StatelessWidget {
               itemCount: categories.length,
             ),
           ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 25),
+            child: const Text(
+              "Popular Games",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          )
         ],
       ),
     );
