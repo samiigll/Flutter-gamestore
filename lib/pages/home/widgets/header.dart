@@ -18,7 +18,7 @@ class HeaderSection extends StatelessWidget {
           children: [
             const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Text(
                   "Welcome,",
                   style: TextStyle(
