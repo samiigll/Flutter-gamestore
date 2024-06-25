@@ -16,8 +16,8 @@ class DescriptionSection extends StatelessWidget {
         trimLines: 2,
         colorClickableText: const Color(0xFF5F67EA),
         trimMode: TrimMode.Line,
-        trimCollapsedText: 'Plus',
-        trimExpandedText: ' Réduire',
+        trimCollapsedText: 'More',
+        trimExpandedText: ' Reduce',
         style: TextStyle(
           color: Colors.grey.withOpacity(0.7),
           height: 1.5,

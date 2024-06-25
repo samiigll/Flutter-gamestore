@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
               transform: Matrix4.identity()..rotateZ(20),
               origin: const Offset(150, 50),
               child: Image.asset(
-                "assets/images/bg_liquid.png",
+                'assets/images/bg_liquid.png',
                 width: 200,
               ),
             ),
@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
                 transform: Matrix4.identity()..rotateZ(20),
                 origin: const Offset(180, 100),
                 child: Image.asset(
-                  "assets/images/bg_liquid.png",
+                  'assets/images/bg_liquid.png',
                   width: 200,
                 ),
               ),
@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
                 const SearchSection(),
                 CategorySection(),
               ],
-            ),
+            )
           ],
         ),
       ),
@@ -50,41 +50,86 @@ class HomePage extends StatelessWidget {
   // ignore: non_constant_identifier_names
   Widget NavigationBar() {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
+      color: const Color(0xfff6f8ff),
+      child: Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+                color: Colors.grey.withOpacity(0.2),
+                spreadRadius: 5,
+                blurRadius: 10),
+          ],
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            spreadRadius: 5,
-            blurRadius: 10,
+        child: ClipRRect(
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
           ),
-        ],
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          IconButton(
-            icon: const Icon(Icons.home),
-            onPressed: () {},
+          child: BottomNavigationBar(
+            selectedItemColor: const Color(0xFF5F67EA),
+            selectedFontSize: 12,
+            unselectedFontSize: 12,
+            unselectedItemColor: Colors.grey.withOpacity(0.7),
+            type: BottomNavigationBarType.fixed,
+            items: [
+              const BottomNavigationBarItem(
+                label: 'home',
+                icon: Icon(
+                  Icons.home_rounded,
+                  size: 50,
+                ),
+              ),
+              BottomNavigationBarItem(
+                label: "Application",
+                icon: Container(
+                  margin: const EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: const Icon(
+                    Icons.more_horiz_outlined,
+                    size: 30,
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
+              BottomNavigationBarItem(
+                label: "Film",
+                icon: Container(
+                  margin: const EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: const Icon(
+                    Icons.play_arrow_rounded,
+                    size: 30,
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
+              BottomNavigationBarItem(
+                label: "Book",
+                icon: Container(
+                  margin: const EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: const Icon(
+                    Icons.auto_stories_rounded,
+                    size: 30,
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
+            ],
           ),
-          IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: const Icon(Icons.favorite),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: const Icon(Icons.person),
-            onPressed: () {},
-          ),
-        ],
+        ),
       ),
     );
   }

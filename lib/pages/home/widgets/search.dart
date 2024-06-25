@@ -6,32 +6,42 @@ class SearchSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // height: 100,
-      // color: Colors.yellow,
-      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 25,
+        vertical: 30,
+      ),
       child: Stack(
         children: [
           TextField(
+            cursorColor: const Color(0xFF5F67EA),
             decoration: InputDecoration(
-                fillColor: Colors.white,
-                filled: true,
-                border: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                  borderSide: BorderSide.none,
+              fillColor: const Color(0xFFF6F8FF),
+              filled: true,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: const BorderSide(
+                  width: 0,
+                  style: BorderStyle.none,
                 ),
-                prefixIcon: const Icon(
-                  Icons.search,
-                  size: 30,
-                ),
-                hintText: 'Search game...',
-                hintStyle: TextStyle(
-                  fontSize: 14,
-                  color: Colors.grey.withOpacity(0.7),
-                )),
+              ),
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 20,
+              ),
+              prefixIcon: const Icon(
+                Icons.search_outlined,
+                size: 30,
+              ),
+              hintText: "Search game",
+              hintStyle: TextStyle(
+                fontSize: 14,
+                color: Colors.grey.withOpacity(0.7),
+              ),
+            ),
           ),
           Positioned(
-            right: 12,
             bottom: 10,
+            right: 12,
             child: Container(
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
@@ -44,7 +54,7 @@ class SearchSection extends StatelessWidget {
                 size: 25,
               ),
             ),
-          ),
+          )
         ],
       ),
     );
